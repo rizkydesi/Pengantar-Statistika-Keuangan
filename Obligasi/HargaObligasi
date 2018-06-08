@@ -1,0 +1,31 @@
+obligasi<-function(f, r, i, n)
+{
+  #f=pokok hutang
+  #r=bunga obligasi
+  #i=suku bunga
+  #n=tahun
+  
+  v=1/(1+i)
+  P=(f*r*((1-v^n)/i))+f*(v^n)
+  return(P)
+}
+
+#contohsoal
+obligasi(100, 0.06, 0.055, 3)
+
+obligasi<-function(f, r, i, t, m){
+  #f=pokok hutang
+  #r=bunga obligasi
+  #i=yield
+  #t=tahun
+  
+  n=t*m
+  rbin=r/m
+  ibin=i/m
+  vbin=1/(1+ibin)
+  an=(1-(vbin^n))/ibin
+  
+  P=f*rbin*an+f*(vbin^n)
+  return(P)
+  
+}
