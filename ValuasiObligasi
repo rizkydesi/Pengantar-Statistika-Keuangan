@@ -4,12 +4,9 @@ valuasiob <- function(f,r,i,m,ttm){
 #m=banyaknya pemberian bunga dalam 1 tahun
 #ttm=time to maternity
 #t=tahun
-#bt=
 #bm=harga obligasi untuk pemilik baru
 #frk=harga obligasi untuk pemilik lama
 
-  
-  
   t=ceiling((ttm*m)+1)
   b=(ttm*m)-floor(ttm*m)
   k=1-b
@@ -18,28 +15,28 @@ valuasiob <- function(f,r,i,m,ttm){
   vbin=1/(1+ibin)
   an= (1-vbin^t)/ibin
   bt=(f*rbin*an)+f*vbin^t
-  print(bt)
+
  
 #Theoritical Method   
   bf1=bt*(1+ibin)^k
   frk1=f*rbin*((1+ibin)^k-1)/ibin
   bm1=bf1-frk1
-  print(bm1)
+  cat("harga obligasi TM=" , bm1,"\n")
   
 #Practical Method
   bf2=bt*(1+k*ibin)
   frk2=k*f*rbin
   bm2=bf2-frk2
-  print(bm2)
+  cat("harga obligasi PM=" , bm2,"\n")
   
 #Semi Theoritical Method
   bf3=bt*((1+ibin)^k)
   frk3=k*f*rbin
   bm3=bf3-frk3
-  print(bm3)
+  cat("harga obligasi STM=" , bm3,"\n")
   
   
 
 }
- 
+#contoh soal
 valuasiob(100,0.06,0.055,2,4.4)
