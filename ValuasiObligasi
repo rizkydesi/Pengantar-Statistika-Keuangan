@@ -1,0 +1,45 @@
+valuasiob <- function(f,r,i,m,ttm){
+#f= pokok hutang
+#r=bunga obilgasi
+#m=banyaknya pemberian bunga dalam 1 tahun
+#ttm=time to maternity
+#t=tahun
+#bt=
+#bm=harga obligasi untuk pemilik baru
+#frk=harga obligasi untuk pemilik lama
+
+  
+  
+  t=ceiling((ttm*m)+1)
+  b=(ttm*m)-floor(ttm*m)
+  k=1-b
+  rbin=r/m
+  ibin=i/m
+  vbin=1/(1+ibin)
+  an= (1-vbin^t)/ibin
+  bt=(f*rbin*an)+f*vbin^t
+  print(bt)
+ 
+#Theoritical Method   
+  bf1=bt*(1+ibin)^k
+  frk1=f*rbin*((1+ibin)^k-1)/ibin
+  bm1=bf1-frk1
+  print(bm1)
+  
+#Practical Method
+  bf2=bt*(1+k*ibin)
+  frk2=k*f*rbin
+  bm2=bf2-frk2
+  print(bm2)
+  
+#Semi Theoritical Method
+  bf3=bt*((1+ibin)^k)
+  frk3=k*f*rbin
+  bm3=bf3-frk3
+  print(bm3)
+  
+  
+
+}
+ 
+valuasiob(100,0.06,0.055,2,4.4)
