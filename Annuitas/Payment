@@ -1,0 +1,23 @@
+payment <- function(num,i, t, nilai, m=TRUE)
+{
+  j=i/m
+  n=m*t
+  v=1/(1+j)
+  switch(num,
+         satu ={
+           k_An_akhir=nilai/((1-v^n)/j)
+           k_Sn_akhir=nilai/((((1+j)^n)-1)/j)
+           print(k_An_akhir)
+           print(k_Sn_akhir)
+         },
+         dua = {
+           k_An_awal = nilai/((1-v^n)/(j*v))
+           k_Sn_awal = nilai/((((1+j)^n)-1)/(j*v))
+           print(k_An_awal)
+           print(k_Sn_awal)
+         }
+  )
+}
+
+#contohsoal
+payment(1,0.08,5,8000,6)
